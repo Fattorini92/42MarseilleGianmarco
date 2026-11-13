@@ -11,12 +11,5 @@
 /* ************************************************************************** */
 
 Prototype char *ft_itoa(int n);
-Files to Submit -
-Parameters n: the integer to convert.
-Return Value The string representing the integer.
-NULL if the allocation fails.
-External Functions malloc
-Description Allocates (with malloc(3)) and returns a string
-representing the integer received as an argument.
-Negative numbers must be handled.
-
+Files to Submit
+	- Parameters n : the integer to convert.Return Value The string representing the integer.NULL if the allocation fails.External Functions malloc Description Allocates(with malloc(3)) and returns a string representing the integer received as an argument.Negative numbers must be handled.

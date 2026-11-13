@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
 #include "libft.h"
 #include <unistd.h>
 
+/*
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
@@ -43,14 +43,11 @@ void	ft_putnbr(int nb)
 		ft_putchar(n + '0');
 	}
 }
-	*/
+*/
 
 int	ft_isalnum(int c)
 {
-	int	a;
-
-	a = c;
-	if ((a > 64 && a < 91) || (a > 96 && a < 123) || (a >= 0 && a <= 9))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
 	else
 		return (0);
@@ -59,7 +56,7 @@ int	ft_isalnum(int c)
 /*
 int	main(void)
 {
-	ft_putnbr(ft_isalnum(' '));
+	ft_putnbr(ft_isalnum('b'));
 	return (0);
 }
 */

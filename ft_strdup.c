@@ -10,16 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-In order to implement the two following functions, you will use malloc()
+In order to implement the two following functions,
+	you will use malloc()
 
-SYNOPSIS
-       #include <string.h>
+		SYNOPSIS
+#include <string.h>
 
-       char *strdup(const char *s);
+	char *strdup(const char *s);
 
-       char *strndup(const char s[.n], size_t n);
-       char *strdupa(const char *s);
-       char *strndupa(const char s[.n], size_t n);
+char	*strndup(const char s[.n], size_t n);
+char	*strdupa(const char *s);
+char	*strndupa(const char s[.n], size_t n);
 
    Feature Test Macro Requirements for glibc (see feature_test_macros(7)):
 
@@ -41,15 +42,18 @@ DESCRIPTION
        The strdup() function returns a pointer to a new string which is a duplicate of the string s.  Memory for the new string is obtained
        with malloc(3), and can be freed with free(3).
 
-       The  strndup()  function  is similar, but copies at most n bytes.  If s is longer than n, only n bytes are copied, and a terminating
+       The  strndup()  function  is similar,
+	but copies at most n bytes.  If s is longer than n, only n bytes are copied,
+	and a terminating
        null byte ('\0') is added.
 
-       strdupa() and strndupa() are similar, but use alloca(3) to allocate the buffer.
+       strdupa() and strndupa() are similar,
+	but use alloca(3) to allocate the buffer.
 
 RETURN VALUE
-       On success, the strdup() function returns a pointer to the duplicated string.  It returns NULL if insufficient memory was available,
+       On success,
+	the strdup() function returns a pointer to the duplicated string.  It returns NULL if insufficient memory was available,
        with errno set to indicate the error.
 
 ERRORS
        ENOMEM Insufficient memory available to allocate duplicate string.
-

@@ -44,50 +44,48 @@ void	ft_putnbr(int nb)
 	}
 }
 */
-	
-int ft_atoi(const char *nptr)
-       {
-              int a;
-              int sign;
-              int result;
 
-              a = 0;
-              sign = 1;
-              result = 0;
-              while (nptr[a] == ' ')
-              a++;
-              if (nptr[a] == '-' || nptr[a] == '+')
-              {
-                     if (nptr[a] == '-')
-                     sign = -1;
-              a++;
-              }
+int	ft_atoi(const char *nptr)
+{
+	int	a;
+	int	sign;
+	int	result;
 
-              while (nptr[a] >= '0' && nptr[a] <= '9')
-              {
-                     result = result * 10 + (nptr[a] - '0');
-                     a++;
-              }
-              return result * sign;
-       }
+	a = 0;
+	sign = 1;
+	result = 0;
+	while (nptr[a] == ' ')
+		a++;
+	if (nptr[a] == '-' || nptr[a] == '+')
+	{
+		if (nptr[a] == '-')
+			sign = -1;
+		a++;
+	}
+	while (nptr[a] >= '0' && nptr[a] <= '9')
+	{
+		result = result * 10 + (nptr[a] - '0');
+		a++;
+	}
+	return (result * sign);
+}
 
 /*
 int main ()
 {
-       ft_putnbr(ft_atoi("-asdkl"));
-       return 0;
+		ft_putnbr(ft_atoi("-asdkl"));
+		return (0);
 }
 */
 
-       /*
+/*
 DESCRIPTION
-       The atoi() function converts the initial portion of the string pointed to by nptr to int.  The behavior is the same as
+The	atoi(void) function converts the initial portion of the string pointed to by nptr to int.  The behavior is the same as
 
 
-       except that atoi() does not detect errors.
+except that	atoi(void) does not detect errors.
 
 
 RETURN VALUE
-       The converted value or 0 on error.
-       */
-
+The converted value or 0 on error.
+*/

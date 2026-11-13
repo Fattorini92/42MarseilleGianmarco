@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-???
+? ? ?
 
 #include <stddef.h>
 #include <string.h>
-
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+	void
+	ft_putstr(char *str)
 {
 	int	i;
 
@@ -29,35 +29,37 @@ void	ft_putstr(char *str)
 	}
 }
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    int a;
-    char *byte_ptr = (char *)ptr;
-    char byte_val = (char) c;
+	int		a;
+	char	*byte_ptr;
+	char	byte_val;
 
-    while (n--)
-    {
-        a = 0;
-    byte_ptr[a] = byte_val;
-    }
-    return ptr;
+	byte_ptr = (char *)ptr;
+	byte_val = (char)c;
+	while (n--)
+	{
+		a = 0;
+		byte_ptr[a] = byte_val;
+	}
+	return (ptr);
 }
 
-int main(void)
+int	main(void)
 {
-    ft_putstr("Hello, world!");
-    write(1,"\n",1);
-    ft_putstr(ft_memset("Hello, world!", 'x', 4));
-    return 0;
+	ft_putstr("Hello, world!");
+	write(1, "\n", 1);
+	ft_putstr(ft_memset("Hello, world!", 'x', 4));
+	return (0);
 }
 
 SYNOPSIS
-       #include <string.h>
+#include <string.h>
 
-       void *memset(void s[.n], int c, size_t n);
+void	*memset(void s[.n], int c, size_t n);
 
 DESCRIPTION
-       The memset() function fills the first n bytes of the memory area pointed to by s with the constant byte c.
+The	memset(void) function fills the first n bytes of the memory area pointed to by s with the constant byte c
+	.
 
-RETURN VALUE
-       The memset() function returns a pointer to the memory area s.
+	RETURN VALUE The memset() function returns a pointer to the memory area s.

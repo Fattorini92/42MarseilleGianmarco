@@ -11,8 +11,5 @@
 /* ************************************************************************** */
 
 Prototype unsigned int ft_lstsize(t_list *lst);
-Files to Submit -
-Parameters lst: The beginning of the list.
-Return Value The length of the list
-External Functions None
-Description Counts the number of nodes in the list.
+Files to Submit
+	- Parameters lst : The beginning of the list.Return Value The length of the list External Functions None Description Counts the number of nodes in the list.

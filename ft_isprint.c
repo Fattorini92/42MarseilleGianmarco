@@ -49,7 +49,7 @@ int	ft_isprint(int c)
 	int	a;
 
 	a = c;
-	if (a >= 33 && a <= 126)
+	if (a >= ' ' && a <= '~')
 		return (1);
 	else
 		return (0);

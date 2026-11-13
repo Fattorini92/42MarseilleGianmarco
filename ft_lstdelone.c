@@ -11,12 +11,5 @@
 /* ************************************************************************** */
 
 Prototype void ft_lstdelone(t_list *lst, void (*del)(void *));
-Files to Submit -
-Parameters lst: The node to free.
-del: The address of the function used to delete the
-content.
-Return Value None
-External Functions free
-Description Takes a node as parameter and frees its content using
-the function ’del’. Frees the node itself but does
-NOT free the next node.
+Files to Submit
+	- Parameters lst : The node to free.del : The address of the function used to delete the content.Return Value None External Functions free Description Takes a node as parameter and frees its content using the function ’del’.Frees the node itself but does NOT free the next node.
