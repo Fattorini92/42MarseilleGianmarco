@@ -19,8 +19,11 @@ int ft_isalnum(int c);
 int ft_isalpha(int c);
 int ft_isdigit(int c);
 int ft_isascii(int c);
-int	ft_isprint(int c)
+int	ft_isprint(int c);
+int ft_atoi(const char *nptr);
+void ft_bzero(void *s, size_t n);
 
+/*
 ft_list.h
 typedef struct s_list
 {
@@ -28,4 +31,5 @@ void *content;
 struct s_list *next;
 } t_list;
 
+*/
 #endif
