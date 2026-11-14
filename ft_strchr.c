@@ -57,7 +57,8 @@ multibyte characters.
 	RETURN VALUE The
 	strchr() and
 	strrchr() functions return a pointer to the matched character or
-NULL if the character is not found.The terminat‐ ing null byte is considered part of the string,
+NULL if the character is not found.
+The terminat‐ ing null byte is considered part of the string,
 so that if c is specified as '\0',
 these functions return a pointer to the termina‐ tor.
 

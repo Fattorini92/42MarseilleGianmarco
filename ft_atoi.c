@@ -10,40 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-
-/*
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	int	n;
-
-	n = nb;
-	if (nb == -2147483648)
-	{
-		write (1, "-2147483648", 11);
-	}
-	else if (n < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(n * -1);
-	}
-	else if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		ft_putchar(n % 10 + '0');
-	}
-	else
-	{
-		ft_putchar(n + '0');
-	}
-}
-*/
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -54,7 +21,7 @@ int	ft_atoi(const char *nptr)
 	a = 0;
 	sign = 1;
 	result = 0;
-	while (nptr[a] == ' ')
+	while (nptr[a] >= 9 && nptr[a] <= 13 || nptr[a] == ' ')
 		a++;
 	if (nptr[a] == '-' || nptr[a] == '+')
 	{
@@ -70,6 +37,8 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
+/*considerar overflow en limites del numero*/
+
 /*
 int main ()
 {
@@ -80,7 +49,8 @@ int main ()
 
 /*
 DESCRIPTION
-The	atoi(void) function converts the initial portion of the string pointed to by nptr to int.  The behavior is the same as
+The	atoi(void) function converts the initial portion of
+ the string pointed to by nptr to int.  The behavior is the same as
 
 
 except that	atoi(void) does not detect errors.

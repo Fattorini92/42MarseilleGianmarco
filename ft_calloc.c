@@ -12,9 +12,10 @@
 
 #include "libft.h"
 
-void *ft_calloc(size_t n, size_t size)
+void	*ft_calloc(size_t n, size_t size)
 {
-	void *p;
+	void	*p;
+
 	if (n == 0 || size == 0)
 	{
 		p = malloc(1);

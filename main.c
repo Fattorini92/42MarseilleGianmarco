@@ -1,17 +1,59 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
 #include "libft.h"
 
-int main(void)
+/*
+void	ft_putchar(char c)
 {
-    char s[] = "hello";
+	write(1, &c, 1);
+}
 
-    printf("%s\n", ft_strrchr(s, 'l'));   // s + 3 (the last one)
-    printf("%s\n", ft_strrchr(s, 'h'));   // s (index 0 is checked)
-    printf("%s\n", ft_strrchr(s, 'z'));   // NULL
-    printf("%s\n", ft_strrchr(s, '\0'));  // s + 5 (the case that failed)
-    printf("%s\n", ft_strrchr(s, 256));   // s + 5
-    printf("%s\n", ft_strrchr("", '\0')); // the string itself
-    return 0;
+void	ft_putnbr(int nb)
+{
+	int	n;
+
+	n = nb;
+	if (nb == -2147483648)
+	{
+		write (1, "-2147483648", 11);
+	}
+	else if (n < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(n * -1);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr(n / 10);
+		ft_putchar(n % 10 + '0');
+	}
+	else
+	{
+		ft_putchar(n + '0');
+	}
+}
+	*/
+
+int	main(void)
+{
+	char	a[] = "hello";
+	char	b[] = "aszsd";
+	char	c[] = "hello";
+	char	d[] = "aszsd";
+	size_t n = 0;
+
+	if (ft_strlcpy(a, b, n) == strlcpy(c, d, n))
+	{
+		printf("it matches =  %s   \n ", a);
+		printf("stringsize_myft =  %zu   \n ", ft_strlcpy(a, b, n));
+		printf("library = %s \n", c);
+		printf("stringsizelibrary =  %zu   \n ", strlcpy(c, d, n));
+		
+	}
+	else
+	{
+		printf("it doesn't match \n mine  = %s \n", a);
+		printf("stringsizeft =  %zu   \n ", ft_strlcpy(a, b, n));
+		printf("library = %s  \n", c);
+		printf("stringsizelibrary =  %zu   \n ", strlcpy(c, d, n));
+	}
+	return (0);
 }
