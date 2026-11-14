@@ -46,10 +46,7 @@ void	ft_putnbr(int nb)
 
 int	ft_isascii(int c)
 {
-	int	a;
-
-	a = c;
-	if (a >= 0 && a <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

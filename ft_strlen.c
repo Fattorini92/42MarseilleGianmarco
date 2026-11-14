@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gfattori <gfattori@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:56:24 by gfattori          #+#    #+#             */
-/*   Updated: 2026/11/11 11:56:25 by gfattori         ###   ########.fr       */
+/*   Updated: 2026/11/13 13:22:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <unistd.h>
-
+#include "libft.h"
 /*
 void	ft_putchar(char c)
 {
@@ -47,17 +45,18 @@ void	ft_putnbr(int nb)
 
 size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
 		i++;
 	return (i);
 }
-
 /*
 int main ()
 {
-	ft_putnbr(ft_strlen("asdf"));
+	ft_putnbr(ft_strlen("42"));
+	write(1, "\n", 1);
+	return (0);
 }
-	*/
+*/

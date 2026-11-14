@@ -56,7 +56,8 @@ int	ft_isalnum(int c)
 /*
 int	main(void)
 {
-	ft_putnbr(ft_isalnum('b'));
+	ft_putnbr(ft_isalnum(' '));
+	write(1, "\n", 1);
 	return (0);
 }
-*/
+	*/
