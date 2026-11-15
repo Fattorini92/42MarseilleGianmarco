@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gfattori <gfattori@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 14:22:38 by gfattori          #+#    #+#             */
-/*   Updated: 2026/11/11 14:22:40 by gfattori         ###   ########.fr       */
+/*   Updated: 2026/11/15 13:30:26 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-Prototype char *ft_substr(char const *s, unsigned int start, size_t len);
-Files to Submit
-	- Parameters s : The string from which to create the substring.start : The start index of the substring in the string
-’s’.len : The maximum length of the substring.Return Value The substring.NULL if the allocation fails.External Functions malloc Description Allocates(with malloc(3)) and returns a substring from the string ’s’.The substring begins at index ’start’ and is of maximum size ’len’
+#include "libft.h"
+
+char *ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char *substr;
+	size_t sublen;
+
+	if (s == NULL)
+		return (NULL);
+	sublen = ft_strlen(s);
+	if (start >= sublen)
+		return (ft_strdup(""));
+	if (len > sublen - start)
+		len = sublen - start;
+	substr = malloc((len + 1) * sizeof(char));
+	if (substr == NULL)
+		return (NULL);
+	ft_strlcpy(substr, s + start, len + 1);
+	return (substr);
+}

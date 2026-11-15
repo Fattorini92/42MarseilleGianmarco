@@ -22,8 +22,8 @@
 #include <string.h>
 #include <bsd/string.h>
 
-void	ft_putchar(char c);
-void	ft_putnbr(int nb);
+void ft_putchar(char c);
+void ft_putnbr(int nb);
 
 int ft_isalpha(int c);
 int ft_isdigit(int c);
@@ -43,11 +43,13 @@ void *ft_memchr(const void *s, int c, size_t n);
 void *ft_calloc(size_t n, size_t size);
 char *ft_strchr(const char *s, int c);
 char *ft_strrchr(const char *s, int c);
-char *    ft_strnstr(const char *big, const char *little, size_t len);
+char *ft_strnstr(const char *big, const char *little, size_t len);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t ft_strlcpy(char *dst, const char *src, size_t size);
-size_t  ft_strlcat(char *dst, const char *src, size_t size);
-
+size_t ft_strlcat(char *dst, const char *src, size_t size);
+char *ft_strdup(const char *s);
+char *ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
 /*
 ft_list.h
 typedef struct s_list

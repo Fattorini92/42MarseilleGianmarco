@@ -32,29 +32,34 @@ void	ft_putnbr(int nb)
 }
 	*/
 
-int	main(void)
-{
-	char	a[] = "hello";
-	char	b[] = "asaszs";
-	char	c[] = "hello";
-	char	d[] = "asaszs";
-	size_t n = 6;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdint.h>
+#include "libft.h"
 
-	if (ft_strlcat(a, b, n) == strlcat(c, d, n))
-	{
-		printf("size of my ft =  %u   \n ", ft_strlcat(a, b, n));		
-		printf("it matches =  %s   \n ", a);
-		printf("size of system =  %u   \n ", strlcat(c, d, n));		
-		printf("library = %s \n", c);
-		
-	}
+static void check(char const *s1, char const *s2, char const *expected)
+{
+	char *result;
+
+	result = ft_strjoin(s1, s2);
+	if (expected == NULL && result == NULL)
+		printf("OK  [NULL]\n");
+	else if (expected != NULL && result != NULL && strcmp(result, expected) == 0)
+		printf("OK  [%s]\n", result);
 	else
-	{
-		printf("it doesn't match \n mine  = %s \n", a);
-		printf("size of my ft =  %u   \n ", ft_strlcat(a, b, n));		
-		printf("library = %s \n", c);
-		printf("size of system =  %u   \n ", strlcat(c, d, n));		
-	}
-	return (0);
+		printf("KO  expected [%s], got [%s]\n",
+			   expected ? expected : "NULL", result ? result : "NULL");
+	free(result);
 }
 
+int main(void)
+{
+	check("hello", " world", "hello world");
+	check("hello", "", "hello");
+	check("", "world", "world");
+	check("", "", "");
+	check(NULL, "hello", NULL);
+	check("hello", NULL, NULL);
+	return (0);
+}
