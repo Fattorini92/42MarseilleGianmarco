@@ -12,6 +12,19 @@
 
 char	**ft_split(char const *s, char c)
 {
+    char **results;
+	size_t	start;
+	size_t	end;
+
+	if (s == NULL || set == NULL)
+		return (NULL);
+	start = 0;
+	while (s1[start] && start < ft_strchr(s, s1[start]))
+		start++;
+	end = ft_strlen(s);
+	while (end > start && ft_strchr(s, s1[start + 1]))
+		end++;
+	return (ft_substr(s1, start, end - start));
 }
 
 /*
