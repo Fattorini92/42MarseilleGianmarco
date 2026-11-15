@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gfattori <gfattori@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 14:24:43 by gfattori          #+#    #+#             */
-/*   Updated: 2026/11/11 14:24:46 by gfattori         ###   ########.fr       */
+/*   Updated: 2026/11/15 16:21:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-Prototype char **ft_split(char const *s, char c);
+char **ft_split(char const *s, char c)
+{
+}
+
+/*
 Files to Submit -
 Parameters s: The string to be split.
 c: The delimiter character.
@@ -28,3 +32,4 @@ independently.
 The array of pointers itself is also allocated
 dynamically.
 The returned array must be NULL terminated.
+*/

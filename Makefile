@@ -27,4 +27,8 @@ clean:
 fclean : clean 
 	$(RM) $(NAME) 
 
+test: $(NAME)
+	$(CC) $(CFLAGS) main.c -L. -lft -o test_libft
+	./test_libft
+
 re : fclean all
