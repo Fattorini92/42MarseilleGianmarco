@@ -42,7 +42,7 @@ static void check(char const *s1, char const *s2, char const *expected)
 {
 	char *result;
 
-	result = ft_strjoin(s1, s2);
+	result = ft_strtrim(s1, s2);
 	if (expected == NULL && result == NULL)
 		printf("OK  [NULL]\n");
 	else if (expected != NULL && result != NULL && strcmp(result, expected) == 0)
@@ -55,11 +55,14 @@ static void check(char const *s1, char const *s2, char const *expected)
 
 int main(void)
 {
-	check("hello", " world", "hello world");
+	check("hello", "h", "ello");
+	check("hello", "o", "hell");
+	check("", "world", "");
+	check("hello", "xyz", "hello");
 	check("hello", "", "hello");
-	check("", "world", "world");
-	check("", "", "");
+	check("hello", "lo", "he");
 	check(NULL, "hello", NULL);
 	check("hello", NULL, NULL);
+	check(NULL, NULL, NULL);
 	return (0);
 }

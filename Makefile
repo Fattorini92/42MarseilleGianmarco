@@ -1,26 +1,28 @@
-#**************************************************************************** #
-# #
-# :: : :: :: :: ::#
-#Makefile : + : : + : : + : #
-#+ : + + : + + : + #
-#By : gfattori < gfattori @learner .42.tech> + # + + : ++# + #
-#+ #+ #+ #+ #+ #+ + #+ #
-#Created : 2026 / 11 / 11 10 : 47 : 28 by gfattori # + # # + # #
-#Updated : 2026 / 11 / 11 10 : 47 : 32 by gfattori## # ########.fr #
-# #
-#**************************************************************************** #
-
 NAME = libft.a
 
-CC = cc 
-CFLAGS = -Wall - Wextra - Werror 
-AR = ar rcs 
+CC = cc
+CFLAGS = -Wall -Wextra -Werror 
+AR = ar rcs
 RM = rm -f
 
-all : $(NAME)
+SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
+ft_toupper.c ft_tolower.c ft_atoi.c ft_bzero.c ft_memset.c ft_memcpy.c\
+ft_memcmp.c ft_strlen.c ft_memmove.c ft_memchr.c ft_calloc.c ft_strchr.c\
+ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_strlcpy.c ft_strlcat.c\
+ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c
 
+OBJS = $(SRCS:.c=.o)
 
-clean : $(RM) $(OBJS) 
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
+
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	$(RM) $(OBJS) 
 
 fclean : clean 
 	$(RM) $(NAME) 

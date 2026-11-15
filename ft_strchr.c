@@ -6,15 +6,15 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 14:02:55 by gfattori          #+#    #+#             */
-/*   Updated: 2026/11/13 20:59:13 by marvin           ###   ########.fr       */
+/*   Updated: 2026/11/15 15:57:02 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
 	while (s[i])
@@ -35,7 +35,7 @@ SYNOPSIS
 char										*strchr(const char *s, int c);
 char										*strrchr(const char *s, int c);
 
-#define _GNU_SOURCE /* See feature_test_macros(7)
+#define _GNU_SOURCE See feature_test_macros(7)
 #include <string.h>
 
 char										*strchrnul(const char *s, int c);

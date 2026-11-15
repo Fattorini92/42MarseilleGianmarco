@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gfattori <gfattori@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 14:12:31 by gfattori          #+#    #+#             */
-/*   Updated: 2026/11/11 14:12:32 by gfattori         ###   ########.fr       */
+/*   Updated: 2026/11/15 15:56:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int ft_atoi(const char *nptr)
 {
-	int	a;
-	int	sign;
-	int	result;
+	int a;
+	int sign;
+	int result;
 
 	a = 0;
 	sign = 1;
 	result = 0;
-	while (nptr[a] >= 9 && nptr[a] <= 13 || nptr[a] == ' ')
+	while ((nptr[a] >= 9 && nptr[a] <= 13) || nptr[a] == ' ')
 		a++;
 	if (nptr[a] == '-' || nptr[a] == '+')
 	{
