@@ -10,9 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-Prototype void ft_putendl_fd(char *s, int fd);
-Files to Submit
-	- Parameters s : The string to output.
-	fd : The file descriptor on which to write.
-	Return Value None External Functions write 
-	Description Outputs the string ’s’ to the given file descriptor followed by a newline.
+#include "libft.h"
+
+void ft_putendl_fd(char *s, int fd)
+{
+	if (s == NULL)
+		return;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
+	return;
+}

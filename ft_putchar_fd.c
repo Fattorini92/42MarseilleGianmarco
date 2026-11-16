@@ -10,9 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-Prototype void ft_putchar_fd(char c, int fd);
+#include "libft.h"
+
+void ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
+/*
 Files to Submit
 	- Parameters c : The character to output.
 	fd : The file descriptor on which to write.
-	Return Value None External Functions write 
+	Return Value None External Functions write
 	Description Outputs the character ’c’ to the given file descriptor.
+*/
