@@ -3,26 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gfattori <gfattori@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:50:45 by gfattori          #+#    #+#             */
-/*   Updated: 2026/11/11 11:50:47 by gfattori         ###   ########.fr       */
+/*   Updated: 2026/11/19 11:02:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int ft_isprint(int c)
 {
 	if (c >= ' ' && c <= '~')
 		return (1);
 	else
 		return (0);
 }
-
-/*
-int main ()
-{
-	ft_putnbr(ft_isascii(33));
-}
-*/
