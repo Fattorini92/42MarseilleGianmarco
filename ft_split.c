@@ -12,75 +12,78 @@
 
 #include "libft.h"
 
-static size_t strcounter(char const *s, char c)
+static size_t	strcounter(char const *s, char c)
 {
-    size_t i;
-    size_t counter;
-    i = 0;
-    counter = 0;
-    while (s[i])
-    {
-        if (s[i] != c && (i == 0 || s[i - 1] == c))
-        {
-            counter++;
-        }
-        i++;
-    }
-    return (counter);
+	size_t	i;
+	size_t	counter;
+
+	i = 0;
+	counter = 0;
+	while (s[i])
+	{
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
+		{
+			counter++;
+		}
+		i++;
+	}
+	return (counter);
 }
 
-static void stringsfree(char **results, size_t count)
+static void	stringsfree(char **results, size_t count)
 {
-    size_t i;
-    i = 0;
-    while (i < count)
-    {
-        free(results[i]);
-        i++;
-    }
-    free(results);
+	size_t	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(results[i]);
+		i++;
+	}
+	free(results);
 }
 
-static int fill(char **results, char const *s, char c)
+static int	fill(char **results, char const *s, char c)
 {
-    size_t i;
-    size_t j;
-    size_t start;
+	size_t	i;
+	size_t	j;
+	size_t	start;
 
-    i = 0;
-    j = 0;
-    while (s[i] == c)
-        i++;
-    while (s[i])
-    {
-        start = i;
-        while (s[i] && s[i] != c)
-            i++;
-        results[j] = ft_substr(s, start, i - start);
-        if (results[j] == NULL)
-        {
-            stringsfree(results, j);
-            return (0);
-        }
-        j++;
-        while (s[i] == c)
-            i++;
-    }
-    results[j] = NULL;
-    return (1);
+	i = 0;
+	j = 0;
+	while (s[i] == c)
+		i++;
+	while (s[i])
+	{
+		start = i;
+		while (s[i] && s[i] != c)
+			i++;
+		results[j] = ft_substr(s, start, i - start);
+		if (results[j] == NULL)
+		{
+			stringsfree(results, j);
+			return (0);
+		}
+		j++;
+		while (s[i] == c)
+			i++;
+	}
+	results[j] = NULL;
+	return (1);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    char **results;
-    if (s == NULL)
-        return (NULL);
-    results = malloc((strcounter(s, c) + 1) * sizeof(char *));
-    if (results == NULL)
-        return (NULL);
-    if (!fill(results, s, c))
-        return (NULL);
-    return (results);
+	char	**results;
+
+	if (s == NULL)
+		return (NULL);
+	results = malloc((strcounter(s, c) + 1) * sizeof(char *));
+	if (results == NULL)
+		return (NULL);
+	if (!fill(results, s, c))
+		return (NULL);
+	return (results);
 }
 
 /*
