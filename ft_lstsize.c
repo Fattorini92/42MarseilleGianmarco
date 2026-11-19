@@ -3,13 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gfattori <gfattori@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 14:31:12 by gfattori          #+#    #+#             */
-/*   Updated: 2026/11/11 14:31:22 by gfattori         ###   ########.fr       */
+/*   Updated: 2026/11/18 21:58:25 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-Prototype unsigned int ft_lstsize(t_list *lst);
-Files to Submit
-	- Parameters lst : The beginning of the list.Return Value The length of the list External Functions None Description Counts the number of nodes in the list.
+#include "libft.h"
+
+unsigned int ft_lstsize(t_list *lst)
+{
+	unsigned int len;
+	len = 0;
+	while (lst != NULL)
+	{
+		len++;
+		lst = lst->next;
+	}
+	return (len);
+}

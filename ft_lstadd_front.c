@@ -10,9 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-Prototype void ft_lstadd_front(t_list **lst, t_list *new);
-Files to Submit
-	- Parameters lst : The address of a pointer to the first node of a list.
-	new : The address of a pointer to the node to be added.
-	Return Value None External Functions None 
-	Description Adds the node ’new’ at the beginning of the list.
+#include "libft.h"
+
+void ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (lst == NULL || new == NULL)
+		return;
+	new->next = *lst;
+	*lst = new;
+	return;
+}
