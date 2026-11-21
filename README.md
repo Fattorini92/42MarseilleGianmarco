@@ -1,17 +1,17 @@
 *This activity has been created as part of the 42 curriculum by <gfattori>.*
 
-# Libft
+Libft
 
-## Description
+Description....
 
 Libft is a C library. The goal of the project is to re-implement a set
 of standard C library functions, write additional utility functions, and manage
 linked lists, then package everything in a static library (`libft.a`) that can be
 reused in future projects.
 
-## Instructions
+Instructions....
 
-### Compilation
+  Compilation.
 
 All files are compiled with `cc -Wall -Wextra -Werror`.
 
@@ -21,7 +21,7 @@ make fclean # removes the object files and libft.a
 make re     # fclean followed by all
 
 
-### Usage in a program
+Usage in a program..
 
 Include the header and link the library:
 
@@ -47,23 +47,24 @@ cc main.c libft.a -o main
 
 this works directly with the created library only if its in the same folder.
 
-## Resources
+Resources....
 
-### References
+References...
 
 - Linux man pages (`man strlen`, `man memmove`, `man calloc`, `man write`, ...)
 - *The C Programming Language*, Kernighan and Ritchie
 Youtube guides 
 
-### Use of AI
+Use of AI
 
+to compare and check for errors 
+to find the workarounds in windows to have a work environment
 
-
-##Library Description
+Library Description....
 
 The library is organized in three parts:
 
-### Part 1 - Libc functions
+Part 1 - Libc functions
 
 Re-implementations of standard functions with the same prototypes and behavior
 as the originals (prefixed with `ft_`).
@@ -75,7 +76,7 @@ as the originals (prefixed with `ft_`).
 | Strings | `ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_strdup` |
 | Conversion | `ft_atoi` |
 
-### Part 2 - Additional functions
+Part 2 - Additional functions
 
 Functions that are not in the libc, or that exist in a different form.
 
@@ -93,7 +94,7 @@ Functions that are not in the libc, or that exist in a different form.
 | `ft_putendl_fd` | Writes a string followed by a newline to a file descriptor. |
 | `ft_putnbr_fd` | Writes an integer to a file descriptor. |
 
-### Part 3 - Linked list
+Part 3 - Linked list
 
 Functions to manipulate lists built from the following structure, declared in
 `libft.h`:
