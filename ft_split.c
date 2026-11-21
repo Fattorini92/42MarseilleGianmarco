@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gfattori <gfattori@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/11 14:24:43 by gfattori          #+#    #+#             */
-/*   Updated: 2026/11/16 16:35:26 by marvin           ###   ########.fr       */
+/*   Created: 2026/11/21 18:45:57 by gfattori          #+#    #+#             */
+/*   Updated: 2026/11/21 18:45:59 by gfattori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	fill(char **results, char const *s, char c)
 
 	i = 0;
 	j = 0;
-	while (s[i] == c)
+	while (s[i] && s[i] == c)
 		i++;
 	while (s[i])
 	{
@@ -59,13 +59,13 @@ static int	fill(char **results, char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 		results[j] = ft_substr(s, start, i - start);
-		if (results[j] == NULL)
+		if (!results[j])
 		{
 			stringsfree(results, j);
 			return (0);
 		}
 		j++;
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 	}
 	results[j] = NULL;
@@ -76,32 +76,12 @@ char	**ft_split(char const *s, char c)
 {
 	char	**results;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	results = malloc((strcounter(s, c) + 1) * sizeof(char *));
-	if (results == NULL)
+	if (!results)
 		return (NULL);
 	if (!fill(results, s, c))
 		return (NULL);
 	return (results);
 }
-
-/*
-Files to Submit -
-Parameters s: The string to be split.
-c: The delimiter character.
-Return Value The array of new strings resulting from the split.
-NULL if any allocation fails.
-The returned structure will be released using:
- 1) free() on each string in the array;
-  2) free() the rray itself.
-External Functions malloc, free
-Description Allocates (with malloc(3)) and returns an array of
-strings obtained by splitting ’s’ using the character
-’c’ as a delimiter.
-Each string in the returned array is allocated
-independently.
-The array of pointers itself is also allocated
-dynamically.
-The returned array must be NULL terminated.
-*/
